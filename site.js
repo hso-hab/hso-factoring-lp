@@ -42,20 +42,4 @@
       if (!destinations[kind]) { event.preventDefault(); showNotice(kind, link); }
     });
   });
-  // Show one mobile action only when both hero and final actions are out of view.
-  const sticky = document.querySelector('.mobile-sticky');
-  const hero = document.querySelector('.hero-action');
-  const final = document.querySelector('.final-cta');
-  const footer = document.querySelector('footer');
-  const updateSticky = () => {
-    const heroBottom = hero.getBoundingClientRect().bottom;
-    const finalRect = final.getBoundingClientRect();
-    const footerTop = footer.getBoundingClientRect().top;
-    sticky.hidden = innerWidth > 760 || heroBottom > 0 || (finalRect.top < innerHeight && finalRect.bottom > 0) || footerTop < innerHeight;
-  };
-  let scheduled = false;
-  const scheduleSticky = () => { if (!scheduled) { scheduled = true; requestAnimationFrame(() => { updateSticky(); scheduled = false; }); } };
-  addEventListener('scroll', scheduleSticky, { passive: true });
-  addEventListener('resize', scheduleSticky);
-  updateSticky();
 })();
