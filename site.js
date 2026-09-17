@@ -33,7 +33,7 @@
         // A click is not a completed application. No personal data or destination query strings.
         const payload = {
           event: 'hso_cta_click', cta_type: kind, cta_placement: link.dataset.placement,
-          destination_configured: Boolean(destinations[kind]), destination_type: 'official_line', page_variant: 'hso_orange_v4_hero',
+          destination_configured: Boolean(destinations[kind]), destination_type: 'official_line', page_variant: 'hso_peach_v5_portrait',
         };
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
