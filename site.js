@@ -1,12 +1,12 @@
 (() => {
   'use strict';
-  const config = window.HSO_CONFIG || {};
+  const config = window.URIMO_CONFIG || {};
   const safeUrl = value => {
     if (!value) return null;
     try { const url = new URL(value); return url.protocol === 'https:' && !url.username && !url.password ? url.href : null; } catch { return null; }
   };
   const destinations = {
-    application: safeUrl(config.lineUrl), line: safeUrl(config.lineUrl),
+    application: safeUrl(config.applicationUrl), line: safeUrl(config.lineUrl),
     company: safeUrl(config.companyUrl), privacy: safeUrl(config.privacyUrl),
   };
   const dialog = document.querySelector('#notice-dialog');
@@ -32,12 +32,12 @@
       if (link.dataset.cta) {
         // A click is not a completed application. No personal data or destination query strings.
         const payload = {
-          event: 'hso_cta_click', cta_type: kind, cta_placement: link.dataset.placement,
-          destination_configured: Boolean(destinations[kind]), destination_type: 'official_line', page_variant: 'hso_peach_v5_portrait',
+          event: 'urimo_cta_click', cta_type: kind, cta_placement: link.dataset.placement,
+          destination_configured: Boolean(destinations[kind]), destination_type: kind === 'application' ? 'application_form' : 'official_line', page_variant: 'urimo_peach_v6_application',
         };
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push(payload);
-        window.dispatchEvent(new CustomEvent('hso:cta', { detail: payload }));
+        window.dispatchEvent(new CustomEvent('urimo:cta', { detail: payload }));
       }
       if (!destinations[kind]) { event.preventDefault(); showNotice(kind, link); }
     });
