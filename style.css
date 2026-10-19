@@ -70,3 +70,7 @@ body{padding-bottom:calc(77px + env(safe-area-inset-bottom))}
 .bottom-sticky{position:fixed;inset:auto 0 0;z-index:20;display:flex;justify-content:center;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
 .bottom-sticky .button{width:100%;max-width:490px;min-height:56px;padding:12px 44px;font-size:17px;border-radius:999px}
 @media print{body{padding-bottom:0}.header-cta,.bottom-sticky,.hero-action,.inline-cta,dialog,.fallback-notice{display:none!important}.section{padding:25px 0}.container{width:100%}.reason,.flow-list li{break-inside:avoid}footer{padding-bottom:20px}}
+
+/* Original reference-inspired mark paired with the retained Urimo wordmark. */
+.brand-logo-v2{display:block;width:44px;height:44px;flex-shrink:0;border-radius:10px}
+@media(max-width:760px){.brand{gap:8px}.brand-logo-v2{width:36px;height:36px;border-radius:8px}.header .brand-description{display:none}}
