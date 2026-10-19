@@ -71,10 +71,8 @@ body{padding-bottom:calc(77px + env(safe-area-inset-bottom))}
 .bottom-sticky .button{width:100%;max-width:490px;min-height:56px;padding:12px 44px;font-size:17px;border-radius:999px}
 @media print{body{padding-bottom:0}.header-cta,.bottom-sticky,.hero-action,.inline-cta,dialog,.fallback-notice{display:none!important}.section{padding:25px 0}.container{width:100%}.reason,.flow-list li{break-inside:avoid}footer{padding-bottom:20px}}
 
-/* Reference: orange speech bubble + Urimo wordmark + two-line descriptor. */
-.brand-logo-speech{display:block;width:44px;height:auto;flex-shrink:0}
-.brand-name{font-family:var(--font);font-weight:900}
-.brand-accent{color:var(--orange)}
+/* Reference option 3: rounded strokes, dark Uri and orange Mo, no separate mark. */
+.brand-wordmark{display:block;width:128px;height:auto;flex-shrink:0}
 .brand-description>span{display:block}
-@media(max-width:760px){.brand{gap:6px}.brand-logo-speech{width:32px}.brand-name{font-size:28px}.header .brand-description{font-size:8px;line-height:1.5}}
+@media(max-width:760px){.brand{gap:8px}.brand-wordmark{width:108px}.header .brand-description{font-size:8px;line-height:1.5}}
 @media(max-width:370px){.header .brand-description{display:none}}
